@@ -1,0 +1,11 @@
+[Unit]
+Description=NFS rpcsec_gss daemon
+Requires=rpcbind.service
+Requires=var-lib-nfs-rpc_pipefs.mount
+
+[Service]
+EnvironmentFile=/etc/conf.d/nfs
+ExecStart=/usr/sbin/rpc.gssd -f $OPTS_RPC_GSSD
+Type=simple
+Restart=on-failure
+

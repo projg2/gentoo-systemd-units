@@ -1,0 +1,8 @@
+[Unit]
+Description=rpc_pipefs
+
+[Mount]
+What=rpc_pipefs
+Where=/var/lib/nfs/rpc_pipefs
+Type=rpc_pipefs
+
