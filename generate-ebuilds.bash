@@ -54,7 +54,7 @@ main() {
 		local pkg=${dn/://}
 
 		local rev=$(git --work-tree="${dir}" rev-list HEAD -- "${dir}" | wc -l)
-		(( rev-- ))
+		: $(( rev-- ))
 
 		local files=( "${dir}"/* )
 		local pv=${bn}-${rev}
