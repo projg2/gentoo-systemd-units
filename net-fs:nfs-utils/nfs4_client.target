@@ -1,0 +1,11 @@
+[Unit]
+Description=Dependencies for NFSv4 mounts
+Requires=rpc.idmapd.service
+Requires=rpc.statd.service
+Wants=sm-notify.service
+Wants=rpc.gssd.service
+After=rpc.idmapd.service rpc.statd.service sm-notify.service rpc.gssd.service
+Before=remote-fs.target
+
+[Install]
+WantedBy=multi-user.target

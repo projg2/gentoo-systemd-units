@@ -1,0 +1,9 @@
+[Unit]
+Description=Dependencies for NFSv3 mounts
+Requires=rpc.statd.service
+Wants=sm-notify.service
+After=rpc.statd.service sm-notify.service
+Before=remote-fs.target
+
+[Install]
+WantedBy=multi-user.target

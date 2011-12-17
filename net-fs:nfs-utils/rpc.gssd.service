@@ -1,0 +1,10 @@
+[Unit]
+Description=NFS rpcsec_gss daemon
+Requires=var-lib-nfs-rpc_pipefs.mount
+After=syslog.target var-lib-nfs-rpc_pipefs.mount
+
+[Service]
+ExecStart=/usr/sbin/rpc.gssd -f
+
+[Install]
+WantedBy=multi-user.target

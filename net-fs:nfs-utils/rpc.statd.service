@@ -1,0 +1,9 @@
+[Unit]
+Description=NFS file locking service
+After=syslog.target network.target rpcbind.service
+
+[Service]
+ExecStart=/sbin/rpc.statd --no-notify -d -F
+
+[Install]
+WantedBy=multi-user.target
