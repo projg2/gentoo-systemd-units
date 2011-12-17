@@ -1,5 +1,6 @@
 [Unit]
 Description=NFS reboot notification service
+Requires=rpcbind.service
 After=syslog.target network.target rpcbind.service
 
 [Service]

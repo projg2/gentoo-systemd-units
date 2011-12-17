@@ -1,8 +1,8 @@
 [Unit]
 Description=NFSv4 ID-name mapping daemon
 Wants=var-lib-nfs-rpc_pipefs.mount
-Requires=network.target var-lib-nfs-rpc_pipefs.mount
-After=syslog.target network.target named.service
+Requires=network.target var-lib-nfs-rpc_pipefs.mount rpcbind.service
+After=syslog.target network.target named.service rpcbind.service
 
 [Service]
 ExecStart=/usr/sbin/rpc.idmapd -f
