@@ -5,3 +5,6 @@ After=syslog.target network.target rpcbind.service
 
 [Service]
 ExecStart=/usr/sbin/sm-notify -d
+RemainAfterExit=yes
+# sm-notify outputs the same to stderr & syslog
+StandardError=null
