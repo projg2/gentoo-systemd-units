@@ -4,6 +4,7 @@ Requires=rpcbind.target
 After=syslog.target network.target rpcbind.target
 
 [Service]
+Type=oneshot
 ExecStart=/usr/sbin/sm-notify -d
 RemainAfterExit=yes
 # sm-notify outputs the same to stderr & syslog
