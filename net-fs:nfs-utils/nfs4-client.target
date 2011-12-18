@@ -1,9 +1,10 @@
 [Unit]
 Description=Dependencies for NFSv4 mounts
-Requires=rpc.idmapd.service
-Requires=rpc.statd.service
+BindTo=rpc.idmapd.service
+BindTo=rpc.statd.service
 Wants=sm-notify.service
-Wants=rpc.gssd.service
+# rpc.gssd is not obligatory only when not using encryption
+#Wants=rpc.gssd.service
 After=rpc.idmapd.service rpc.statd.service rpc.gssd.service
 Before=remote-fs.target
 
