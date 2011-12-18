@@ -1,7 +1,7 @@
 [Unit]
 Description=NFS reboot notification service
-Requires=rpcbind.service
-After=syslog.target network.target rpcbind.service
+Requires=rpcbind.target
+After=syslog.target network.target rpcbind.target
 
 [Service]
 ExecStart=/usr/sbin/sm-notify -d

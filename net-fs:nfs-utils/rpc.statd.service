@@ -1,7 +1,7 @@
 [Unit]
 Description=NFS file locking service
-Requires=rpcbind.service
-After=syslog.target network.target rpcbind.service
+Requires=rpcbind.target
+After=syslog.target network.target rpcbind.target
 
 [Service]
 ExecStart=/sbin/rpc.statd --no-notify -d -F

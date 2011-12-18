@@ -1,7 +1,9 @@
 [Unit]
-Description=RPC bind service
+Description=RPC program number mapper service
 Requires=rpcbind.socket
+Wants=rpcbind.target
 After=syslog.target network.target
+Before=rpcbind.target
 
 [Service]
 # use --debug not to fork
