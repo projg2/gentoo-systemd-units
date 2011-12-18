@@ -3,6 +3,7 @@ Description=NFS rpcsec_gss daemon
 Requires=var-lib-nfs-rpc_pipefs.mount
 Requires=rpcbind.target
 After=syslog.target var-lib-nfs-rpc_pipefs.mount rpcbind.target
+Before=remote-fs.target
 
 [Service]
 ExecStart=/usr/sbin/rpc.gssd -f
