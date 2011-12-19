@@ -1,0 +1,10 @@
+[Unit]
+Description=fcron Cron Daemon
+After=syslog.target
+
+[Service]
+ExecStart=/usr/sbin/fcron -f
+ExecReload=/bin/kill -USR1 $MAINPID
+
+[Install]
+WantedBy=multi-user.target
