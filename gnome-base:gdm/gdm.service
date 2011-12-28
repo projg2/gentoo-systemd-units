@@ -6,4 +6,4 @@ After=systemd-user-sessions.service
 ExecStart=/usr/bin/gdm --nodaemon
 
 [Install]
-Alias=graphical.target.wants/gdm.service
+WantedBy=graphical.target
